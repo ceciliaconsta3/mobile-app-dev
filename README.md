@@ -1,4 +1,4 @@
-# :calendar: C196 Mobile App Devolopment
+# :iphone: C196 Mobile App Development
 
 ## Purpose
 A multiple-screen mobile application for a student to track terms, courses associated with each term, and assessment(s) associated with each course.
