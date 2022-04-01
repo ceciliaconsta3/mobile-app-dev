@@ -1,4 +1,4 @@
-package com.example.c196_ceciliaconstantine;
+package com.zybooks.c196;
 
 import org.junit.Test;
 

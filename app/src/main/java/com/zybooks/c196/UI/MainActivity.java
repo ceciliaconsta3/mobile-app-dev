@@ -1,10 +1,10 @@
-package com.example.c196_ceciliaconstantine.UI;
+package com.zybooks.c196.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import com.example.c196_ceciliaconstantine.R;
+import com.zybooks.c196.R;
 
 public class MainActivity extends AppCompatActivity {
 

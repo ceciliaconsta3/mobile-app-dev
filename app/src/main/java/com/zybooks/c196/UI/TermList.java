@@ -1,4 +1,4 @@
-package com.example.c196_ceciliaconstantine.UI;
+package com.zybooks.c196.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.c196_ceciliaconstantine.R;
+import com.zybooks.c196.R;
 
 public class TermList extends AppCompatActivity {
 
@@ -27,14 +27,14 @@ public class TermList extends AppCompatActivity {
 //        return true;
 //    }
 
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-            case android.R.id.home:
-                this.finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    public boolean onOptionsItemSelected(MenuItem item){
+//        switch (item.getItemId()){
+//            case android.R.id.home:
+//                this.finish();
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
 
     public void goToClassList(View view){

@@ -4,12 +4,11 @@ plugins {
 
 android {
     compileSdk 32
-    buildToolsVersion '32.0.0'
 
     defaultConfig {
-        applicationId "com.example.c196_ceciliaconstantine"
-        minSdkVersion 16
-        targetSdk 30
+        applicationId "com.zybooks.c196"
+        minSdk 24
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -36,4 +35,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //  Room
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
+
 }
