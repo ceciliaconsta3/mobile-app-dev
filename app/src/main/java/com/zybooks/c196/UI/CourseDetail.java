@@ -8,16 +8,12 @@ import android.view.View;
 
 import com.zybooks.c196.R;
 
-public class ClassList extends AppCompatActivity {
+public class CourseDetail extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_list);
+        setContentView(R.layout.activity_class_detail);
     }
 
-    public void goToClassDetail(View view){
-        Intent intent = new Intent(ClassList.this,ClassDetail.class);
-        startActivity(intent);
-    }
 }

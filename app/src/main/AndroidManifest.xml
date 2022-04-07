@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.C196">
         <activity
-            android:name=".UI.ClassDetail"
+            android:name=".UI.CourseDetail"
             android:label="Class Detail"
-            android:parentActivityName=".UI.ClassList"
+            android:parentActivityName=".UI.CourseList"
             android:exported="false" />
         <activity
-            android:name=".UI.ClassList"
+            android:name=".UI.CourseList"
             android:label="Class List"
             android:parentActivityName=".UI.TermList"
             android:exported="false" />

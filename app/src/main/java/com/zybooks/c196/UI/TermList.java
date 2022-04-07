@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.zybooks.c196.R;
+
+
+//TODO: need to be able to add as many terms as we want
+//TODO: Add logic, term cannot be deleted if there are courses assigned to it
 
 public class TermList extends AppCompatActivity {
 
@@ -38,7 +40,7 @@ public class TermList extends AppCompatActivity {
 
 
     public void goToClassList(View view){
-        Intent intent = new Intent(TermList.this,ClassList.class);
+        Intent intent = new Intent(TermList.this, CourseList.class);
         startActivity(intent);
     }
 }

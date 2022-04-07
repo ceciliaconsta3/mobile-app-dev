@@ -10,14 +10,14 @@ public class Term {
 
     @PrimaryKey(autoGenerate = true)
     private int termID;
-    private String termName;
+    private String termName, startDate, endDate;
 
-    public Term(int termID, String termName, double termPrice) {
+    public Term(int termID, String termName, String startDate, String endDate ) {
         this.termID = termID;
         this.termName = termName;
-        // just view + follow the task directions
-        // add start/end date to term
-        // go to live session sat 1-3pm with Carolyn and sun with Richard
+        this.startDate = startDate;
+        this.endDate = endDate;
+        // TODO: go to live session sat 1-3pm with Carolyn and sun with Richard
     }
 
 
@@ -25,7 +25,9 @@ public class Term {
     public String toString() {
         return "Term{" +
                 "termID=" + termID +
-                ", termName=' " + termName + '\'' +
+                ", termName=' " + termName +
+                ", startDate=' " + startDate +
+                ", endDate= ' " + endDate + '\'' +
                 '}';
     }
 
@@ -46,5 +48,20 @@ public class Term {
         this.termName = termName;
     }
 
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 }
 
