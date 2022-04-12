@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         // insert test data into database
         Repository repo = new Repository(getApplication());
         Term term = new Term(1,"Spring","03-01-2022","03-31-2022");
-        Course course = new Course(1,"Mobile Application Development",4,"04-01-2022", "04-30-2022","In Progress");
+        Course course = new Course(1,"Mobile Application Development",4,"04-01-2022", "04-30-2022","In Progress", "test course note");
         repo.insertTerm(term);
         repo.insertCourse(course);
 

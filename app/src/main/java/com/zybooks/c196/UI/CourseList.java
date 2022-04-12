@@ -13,10 +13,10 @@ public class CourseList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_list);
+        setContentView(R.layout.activity_course_list);
     }
 
-    public void goToClassDetail(View view){
+    public void goToCourseDetail(View view){
         Intent intent = new Intent(CourseList.this, CourseDetail.class);
         startActivity(intent);
     }

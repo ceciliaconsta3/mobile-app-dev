@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.18125" />
         <entry key="app/src/main/res/drawable-v24/ic_baseline_calendar_today_24.xml" value="0.1185" />
+        <entry key="app/src/main/res/layout/activity_course_detail.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/activity_course_list.xml" value="0.2526041666666667" />
         <entry key="app/src/main/res/layout/activity_term_list.xml" value="0.16134751773049646" />
         <entry key="app/src/main/res/layout/term_list_item.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu_termlist.xml" value="0.2074074074074074" />

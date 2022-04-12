@@ -27,7 +27,7 @@ public class Repository {
     // constructor
     public Repository(Application application){
         DatabaseBuilder db = DatabaseBuilder.getDatabase(application);
-        mCourseDAO = db.classDAO();
+        mCourseDAO = db.courseDAO();
         mTermDAO = db.termDAO();
     }
 

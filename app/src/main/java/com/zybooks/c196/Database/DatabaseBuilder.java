@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.zybooks.c196.DAO.CourseDAO;
 import com.zybooks.c196.DAO.TermDAO;
+import com.zybooks.c196.Entity.Course;
 import com.zybooks.c196.Entity.Term;
 
 import androidx.room.Database;
@@ -12,10 +13,10 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 // needs to know what entities to build the database from
-@Database(entities={Term.class,Class.class}, version = 1, exportSchema = false)
+@Database(entities={Term.class, Course.class}, version = 1, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
         public abstract TermDAO termDAO();
-        public abstract CourseDAO classDAO();
+        public abstract CourseDAO courseDAO();
         // makes an instance of the db
         private static volatile DatabaseBuilder INSTANCE;
 

@@ -5,25 +5,17 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 
-@Entity(tableName = "course")
+@Entity(tableName = "courses")
 public class Course {
 
     @PrimaryKey(autoGenerate = true)
-    private int courseID, courseCredits;
+    private int courseID;
+    private int courseCredits;
     private String courseTitle, courseStartDate, courseEndDate, courseStatus, courseNote;
 //  private ArrayList<Instructor> instructors;
 //  TODO: Create array of instructor objects that includes their: name, email, phone number
 //  TODO: Minimum 1 optional note
 
-
-    public Course(int courseID, String courseTitle, int courseCredits, String courseStartDate, String courseEndDate, String courseStatus) {
-        this.courseID = courseID;
-        this.courseTitle = courseTitle;
-        this.courseCredits = courseCredits;
-        this.courseStartDate = courseStartDate;
-        this.courseEndDate = courseEndDate;
-        this.courseStatus = courseStatus;
-    }
 
     // optional class note
     public Course(int courseID, String courseTitle, int courseCredits, String courseStartDate, String courseEndDate, String courseStatus, String courseNote) {
