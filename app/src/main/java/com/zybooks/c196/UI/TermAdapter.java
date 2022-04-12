@@ -24,14 +24,20 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
         private TermViewHolder(View itemView){ // this is the constructor
             super(itemView);
             termItemView = itemView.findViewById(R.id.textView2);
-            itemView.setOnClickListener(view -> {
-                int position = getAdapterPosition();
-                final Term current = mTerms.get(position);// it wants position in list of items, that means we need to tell it where the items are and create the list
-                Intent intent = new Intent(context,CourseList.class); // now to send information and change it from the current area to another screen
-                intent.putExtra("id", current.getTermID()); // to receive lots of key/value pairs on that intent
-                intent.putExtra("name", current.getTermName());
-                intent.putExtra("startDate", current.getStartDate());
-                intent.putExtra("endDate", current.getEndDate());
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    final Term current = mTerms.get(position);// it wants position in list of items, that means we need to tell it where the items are and create the list
+                    Intent intent = new Intent(context, CourseList.class); // now to send information and change it from the current area to another screen
+                    intent.putExtra("id", current.getTermID()); // to receive lots of key/value pairs on that intent
+                    intent.putExtra("name", current.getTermName());
+                    intent.putExtra("startDate", current.getStartDate());
+                    intent.putExtra("endDate", current.getEndDate());
+                    // need to send the Extras to the actual screen  which shoud display on termlistItem click
+                    // enables us to go to the next screen
+                    context.startActivity(intent);
+                }
             });
         }
     }

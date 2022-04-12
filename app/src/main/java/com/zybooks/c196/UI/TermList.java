@@ -31,7 +31,9 @@ public class TermList extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         Repository repo = new Repository(getApplication());
         List<Term> terms = repo.getAllTerms();
-        final TermAdapter adapter = new TermAdapter(getApplicationContext());
+//        final TermAdapter adapter = new TermAdapter(getApplicationContext());
+        final TermAdapter adapter = new TermAdapter(this);
+
         // need to set the layout manager in this
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         // need to set the adapter to the recyclerview as well for the handoff to complete
