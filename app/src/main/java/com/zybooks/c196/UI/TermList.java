@@ -32,6 +32,8 @@ public class TermList extends AppCompatActivity {
         Repository repo = new Repository(getApplication());
         List<Term> terms = repo.getAllTerms();
 //        final TermAdapter adapter = new TermAdapter(getApplicationContext());
+//        changed to address error: Calling startActivity() from outside of an Activity context requires the
+//        FLAG_ACTIVITY_NEW_TASK flag. Is this really what?
         final TermAdapter adapter = new TermAdapter(this);
 
         // need to set the layout manager in this
@@ -58,8 +60,12 @@ public class TermList extends AppCompatActivity {
 //        return super.onOptionsItemSelected(item);
 //    }
 
+    public void goToTermDetail(View view){
+        Intent intent = new Intent(TermList.this, TermDetail.class);
+        startActivity(intent);
+    }
 
-    public void goToCourseList(View view){
+        public void goToCourseList(View view){
         Intent intent = new Intent(TermList.this, CourseList.class);
         startActivity(intent);
     }

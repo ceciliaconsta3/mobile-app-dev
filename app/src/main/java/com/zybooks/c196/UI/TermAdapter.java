@@ -15,12 +15,15 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+//TODO: Need to point itemView/termListItem to its respective courseList
+
 
 public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder>{
 
     // viewholder tells the adapter everything in each list item
     class TermViewHolder extends RecyclerView.ViewHolder{
         private final TextView termItemView;
+
         private TermViewHolder(View itemView){ // this is the constructor
             super(itemView);
             termItemView = itemView.findViewById(R.id.textView2);
@@ -53,6 +56,10 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
         this.context = context;
     }
 
+    //    public void goToCourseList(View view){
+//        Intent intent = new Intent(TermList.this, CourseList.class);
+//        startActivity(intent);
+//    }
 
     @NonNull
     @Override
