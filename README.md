@@ -25,7 +25,9 @@ The application allows students to enter, edit, and delete term, course, and ass
 
 
 ## How to Run This Program
-
+Make sure Android Studio and its related APKs are installed as well as Java.
+To view the project in a Mac M1 emulator, install the [official emulator](https://github.com/741g/android-emulator-m1-preview/releases/tag/0.2), bypassing the unidentified developer alerts and following the installation instructions contained in the README. 
+Restart Android Studio and the new emulator will be displayed in the Run configuration dropdown. 
 
 ## Skills Applied:
 * Java application programming
