@@ -16,12 +16,12 @@
             android:exported="false" />
         <activity
             android:name=".UI.CourseDetail"
-            android:label="Course Details"
+            android:label="New Course Details"
             android:parentActivityName=".UI.CourseList"
             android:exported="false" />
         <activity
             android:name=".UI.TermDetail"
-            android:label="Term Details"
+            android:label="New Term Details"
             android:parentActivityName=".UI.TermList"
             android:exported="false" />
         <activity

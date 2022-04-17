@@ -42,7 +42,17 @@ public class Repository {
             Thread.sleep(1000); // need a delay since thread is run asynchronously
         } catch(InterruptedException e){
             e.printStackTrace();}
+    }
 
+    public void updateTerm(Term term){
+        databaseExecutor.execute(() -> {
+            mTermDAO.update(term);
+        }); // done on the second thread
+
+        try{
+            Thread.sleep(1000); // need a delay since thread is run asynchronously
+        } catch(InterruptedException e){
+            e.printStackTrace();}
     }
 
     public void insertCourse(Course course){
@@ -56,6 +66,19 @@ public class Repository {
             e.printStackTrace();
         }
     }
+
+    public void updateCourse(Course course){
+        databaseExecutor.execute(() -> {
+            mCourseDAO.update(course);
+        }); // done on the second thread
+
+        try{
+            Thread.sleep(1000); // need a delay since thread is run asynchronously
+        } catch(InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
 
     // retrieve all terms from db
     public List<Term> getAllTerms(){
