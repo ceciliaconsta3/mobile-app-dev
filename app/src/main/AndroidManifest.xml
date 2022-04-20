@@ -10,18 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.C196">
         <activity
-            android:name=".UI.CourseList"
-            android:label="Course List"
-            android:parentActivityName=".UI.TermList"
-            android:exported="false" />
-        <activity
             android:name=".UI.CourseDetail"
-            android:label="New Course Details"
+            android:label="Course Details"
             android:parentActivityName=".UI.CourseList"
             android:exported="false" />
         <activity
-            android:name=".UI.TermDetail"
+            android:name=".UI.NewTermDetail"
             android:label="New Term Details"
+            android:parentActivityName=".UI.TermList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.TermDetail"
+            android:label="Term Details"
             android:parentActivityName=".UI.TermList"
             android:exported="false" />
         <activity
@@ -29,7 +29,6 @@
             android:exported="false"
             android:parentActivityName=".UI.MainActivity"
             android:label="Term List"/>
-
         <activity
             android:name=".UI.MainActivity"
             android:exported="true">

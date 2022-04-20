@@ -17,7 +17,6 @@ public class Term {
         this.termName = termName;
         this.startDate = startDate;
         this.endDate = endDate;
-        // TODO: go to live session sat 1-3pm with Carolyn and sun with Richard
     }
 
 

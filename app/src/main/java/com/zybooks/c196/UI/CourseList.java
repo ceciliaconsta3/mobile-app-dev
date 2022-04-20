@@ -23,6 +23,9 @@ public class CourseList extends AppCompatActivity {
     }
 
 
-
+    public void goToNewCourseDetail(View view){
+        Intent intent = new Intent(CourseList.this, NewCourseDetail.class);
+        startActivity(intent);
+    }
 
 }

@@ -15,7 +15,6 @@ import com.zybooks.c196.R;
 import java.util.List;
 
 
-//TODO: need to be able to add as many terms as we want
 //TODO: Add logic, term cannot be deleted if there are courses assigned to it
 
 public class TermList extends AppCompatActivity {
@@ -27,8 +26,8 @@ public class TermList extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        // have to actually put the items on the recyclerview in the TermsList activity
-        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        // have to actually put the items on the termListRecyclerView in the TermsList activity
+        RecyclerView recyclerView = findViewById(R.id.termListRecyclerView);
         Repository repo = new Repository(getApplication());
         List<Term> terms = repo.getAllTerms();
 //        final TermAdapter adapter = new TermAdapter(getApplicationContext());
@@ -38,10 +37,10 @@ public class TermList extends AppCompatActivity {
 
         // need to set the layout manager in this
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        // need to set the adapter to the recyclerview as well for the handoff to complete
+        // need to set the adapter to the termlistRecyclerView as well for the handoff to complete
         recyclerView.setAdapter(adapter);
         adapter.setTerms(terms);
-        // now actually getting our list of products to put on the recyclerview
+        // now actually getting our list of products to put on the termlistRecyclerView
 
     }
 
@@ -64,9 +63,9 @@ public class TermList extends AppCompatActivity {
         Intent intent = new Intent(TermList.this, TermDetail.class);
         startActivity(intent);
     }
-
-        public void goToCourseList(View view){
-        Intent intent = new Intent(TermList.this, CourseList.class);
+    public void goToNewTermDetail(View view){
+        Intent intent = new Intent(TermList.this, NewTermDetail.class);
         startActivity(intent);
     }
+
 }

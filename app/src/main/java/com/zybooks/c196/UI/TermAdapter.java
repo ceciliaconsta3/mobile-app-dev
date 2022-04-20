@@ -16,8 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 //TODO: Need to point itemView/termListItem to its respective courseList
-
-
 public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder>{
 
     // viewholder tells the adapter everything in each list item
@@ -26,13 +24,13 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
 
         private TermViewHolder(View itemView){ // this is the constructor
             super(itemView);
-            termItemView = itemView.findViewById(R.id.textView2);
+            termItemView = itemView.findViewById(R.id.textView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
                     final Term current = mTerms.get(position);// it wants position in list of items, that means we need to tell it where the items are and create the list
-                    Intent intent = new Intent(context, CourseList.class); // now to send information and change it from the current area to another screen
+                    Intent intent = new Intent(context, TermDetail.class); // now to send information and change it from the current area to another screen
                     intent.putExtra("id", current.getTermID()); // to receive lots of key/value pairs on that intent
                     intent.putExtra("name", current.getTermName());
                     intent.putExtra("startDate", current.getStartDate());
@@ -49,6 +47,7 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
     private List<Term> mTerms;
     private final Context context;
     private final LayoutInflater mInflater;
+
     // constructor for the adapter - the other is for the view holder
     // this inflates the layout with the itemview items
     public TermAdapter(Context context){
@@ -56,15 +55,11 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
         this.context = context;
     }
 
-    //    public void goToCourseList(View view){
-//        Intent intent = new Intent(TermList.this, CourseList.class);
-//        startActivity(intent);
-//    }
 
     @NonNull
     @Override
     public TermAdapter.TermViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.term_list_item, parent, false);
+        View itemView = mInflater.inflate(R.layout.item_term_list, parent, false);
         return new TermViewHolder(itemView);
     }
 
@@ -74,7 +69,7 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
          if(mTerms != null){
              Term current = mTerms.get(position);
              String name = current.getTermName();
-             holder.termItemView.setText(name );
+             holder.termItemView.setText(name);
          } else {
              holder.termItemView.setText("No term name");
          }
@@ -85,6 +80,10 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
         mTerms = terms;
         notifyDataSetChanged();
     }
+
+
+
+//    TODO: input validation that will not allow you to delete a term if it contains >1 courses
 
     @Override
     public int getItemCount() {
