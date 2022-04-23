@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".UI.CourseDetail">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currentTermCoursesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TODO: select course status from a dropdown: in progress, completed, dropped, plan to take -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currentCourseCoursesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 <!--TODO: display detail view of the current course: title, start,end, status, note -->
     <LinearLayout
             android:layout_width="match_parent"
@@ -83,27 +100,38 @@
                     android:hint="In Progress" />
 
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Note" />
+
+                <EditText
+                    android:id="@+id/editCourseNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Study smart, not hard!" />
+
+
+                <Button
+                    android:id="@+id/courseDetailButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="160dp"
+                    android:onClick="saveCourseDetailButton"
+                    android:text="Save"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
             </LinearLayout>
 
 
         </LinearLayout>
 
 
-
-    <!-- TODO: select course status from a dropdown: in progress, completed, dropped, plan to take -->
-
     <!-- TODO: ability to add assessments -->
 
 
-    <Button
-        android:id="@+id/courseDetailButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="160dp"
-        android:onClick="saveCourseButton"
-        android:text="Save"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

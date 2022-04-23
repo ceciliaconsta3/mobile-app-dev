@@ -13,7 +13,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 // needs to know what entities to build the database from
-@Database(entities={Term.class, Course.class}, version = 1, exportSchema = false)
+@Database(entities={Term.class, Course.class}, version = 2, exportSchema = false)
 public abstract class DatabaseBuilder extends RoomDatabase {
         public abstract TermDAO termDAO();
         public abstract CourseDAO courseDAO();

@@ -19,7 +19,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/termListRecyclerView"
         android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="2dp"
         android:background="@color/teal_200"

@@ -37,7 +37,7 @@
         app:layout_constraintLeft_toLeftOf="parent">
 
         <EditText
-            android:id="@+id/editNewTermName"
+            android:id="@+id/addNewTermName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/teal_700"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:text="Term Name" />
             <EditText
-                android:id="@+id/editTermName"
+                android:id="@+id/addTermName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Spring" />
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:text="Start Date" />
             <EditText
-                android:id="@+id/editTermStart"
+                android:id="@+id/addTermStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="04-10-2022" />
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="End Date" />
             <EditText
-                android:id="@+id/editTermEnd"
+                android:id="@+id/addTermEnd"
                 android:layout_width="197dp"
                 android:layout_height="wrap_content"
                 android:hint="04-31-2022" />

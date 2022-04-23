@@ -8,18 +8,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zybooks.c196.Entity.Course;
-import com.zybooks.c196.Entity.Term;
 import com.zybooks.c196.R;
 
-import java.text.BreakIterator;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
-
 
     private List<Course> mCourses;
     private Context context;
@@ -36,7 +32,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
         public CourseViewHolder(@NonNull View itemView) {
             super(itemView);
-           courseItemView = itemView.findViewById(R.id.courseListTextView);
+            courseItemView = itemView.findViewById(R.id.courseListTextView);
+//            courseItemView = itemView.findViewById(R.id.currentTermCoursesRecyclerView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -45,7 +42,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                     final Course current = mCourses.get(position);// it wants position in list of items, that means we need to tell it where the items are and create the list
                     Intent intent = new Intent(context, CourseList.class); // now to send information and change it from the current area to another screen
                     intent.putExtra("id", current.getCourseID()); // to receive lots of key/value pairs on that intent
-                    intent.putExtra("name", current.getCourseTitle());
+                    intent.putExtra("name", current.getCourseName());
                     intent.putExtra("startDate", current.getCourseStartDate());
                     intent.putExtra("endDate", current.getCourseEndDate());
                     intent.putExtra("status",current.getCourseStatus());
@@ -75,16 +72,23 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 //        }
 //    }
 
+
+
     @Override
     public void onBindViewHolder(@NonNull CourseAdapter.CourseViewHolder holder, int position) {
         if(mCourses != null){
             Course current = mCourses.get(position);
-            String name = current.getCourseTitle();
+            String name = current.getCourseName();
 
             holder.courseItemView.setText(name);
         } else {
             holder.courseItemView.setText("No course name");
         }
+    }
+
+    public void setCourses(List<Course> courses){
+        mCourses = courses;
+        notifyDataSetChanged();
     }
 
     @Override

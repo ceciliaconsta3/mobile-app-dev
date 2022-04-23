@@ -6,76 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".UI.TermDetail">
 
-
-
 <!--TODO: show courses only associated with the term by filtering the list on termID -->
 <!--TODO: display term detail for the term selected on TermList activity, in termlistRecyclerView -->
 <!--    term list = list of terms-->
 <!--    term list leads to add new term and select courses that will be inside the term-->
 
 
-<!-- TODO: recycler view to display current term details(title,start,end) + allow user to edit term name details via term_list_item activity -->
-    <ScrollView
-        android:id="@+id/termDetailScrollView"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/termdetailrecyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/teal_200"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    </ScrollView>
-
-
-
 
 <!-- TODO: layout to display list of courses associated with this term: want to use same format as edit form fields -->
-    <LinearLayout
-        android:id="@+id/addTermDetail"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currentTermCoursesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="300dp"
-        app:layout_constraintTop_toBottomOf="@+id/termDetailScrollView"
-        app:layout_constraintLeft_toLeftOf="parent">
+        android:background="@color/teal_200"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/currentTermCoursesRecyclerView"
+
+
+    <!--    display current term information in editable fields for db update query -->
+    <LinearLayout
+        android:id="@+id/editTermDetailLayout"
+        android:layout_width="411dp"
+        android:layout_height="344dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentTermCoursesRecyclerView">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/teal_200"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Term Name" />
+
+            <EditText
+                android:id="@+id/editTermName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Date" />
+
+            <EditText
+                android:id="@+id/editTermStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="04-10-2022" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="End Date" />
+
+            <EditText
+                android:id="@+id/editTermEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="04-31-2022" />
+
+            <!-- save updated term form details to db -->
+            <Button
+                android:id="@+id/termDetailButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:onClick="saveTermDetailButton"
+                android:text="Save Term Update"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+        </LinearLayout>
     </LinearLayout>
 
 
+    <!--    display list of courses associated with term via termlistRecyclerView -->
+
+
+<!--    save any term updates -->
+<!--    <Button-->
+<!--        android:id="@+id/itemTermDetailButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="160dp"-->
+<!--        android:onClick="saveButton"-->
+<!--        android:text="Save"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"/>-->
 
 
 
-
-
-
-<!-- save updated term form details to db -->
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="160dp"
-        android:onClick="saveButton"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

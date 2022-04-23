@@ -14,9 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class NewTermDetail extends AppCompatActivity {
     //    Declare our edit text
     int termID;
-    EditText editTermName;
-    EditText editTermStart;
-    EditText editTermEnd;
+    EditText addTermName;
+    EditText addTermStart;
+    EditText addTermEnd;
     String name, start, end;
     Repository repo;
 
@@ -25,23 +25,20 @@ public class NewTermDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_term_detail);
 
-        editTermName = findViewById(R.id.editTermName);
-        editTermStart = findViewById(R.id.editTermStart);
-        editTermEnd = findViewById(R.id.editTermEnd);
+        addTermName = findViewById(R.id.addTermName);
+        addTermStart = findViewById(R.id.addTermStart);
+        addTermEnd = findViewById(R.id.addTermEnd);
 
         termID = getIntent().getIntExtra("termID", -1);
-        name = getIntent().getStringExtra("editTermName");
+        name = getIntent().getStringExtra("addTermName");
         start = getIntent().getStringExtra("editTermStart");
-        end = getIntent().getStringExtra("editTermEnd");
+        end = getIntent().getStringExtra("addTermEnd");
 
-        editTermName.setText(name);
-        editTermStart.setText(start);
-        editTermEnd.setText(end);
+        addTermName.setText(name);
+        addTermStart.setText(start);
+        addTermEnd.setText(end);
 
         repo = new Repository(getApplication());
-
-
-
     }
 
 //    TODO: Update function is not working
@@ -63,11 +60,11 @@ public class NewTermDetail extends AppCompatActivity {
         Intent intent = new Intent(NewTermDetail.this, TermList.class);
         if(termID == -1){
             int newID = repo.getAllTerms().get(repo.getAllTerms().size() - 1).getTermID() + 1;
-            term = new Term(newID,editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
+            term = new Term(newID, addTermName.getText().toString(), addTermStart.getText().toString(), addTermEnd.getText().toString());
             repo.insertTerm(term);
             startActivity(intent);
         } else {
-            term = new Term(termID,editTermName.getText().toString(), editTermStart.getText().toString(), editTermEnd.getText().toString());
+            term = new Term(termID, addTermName.getText().toString(), addTermStart.getText().toString(), addTermEnd.getText().toString());
             repo.updateTerm(term);
             startActivity(intent);
         }

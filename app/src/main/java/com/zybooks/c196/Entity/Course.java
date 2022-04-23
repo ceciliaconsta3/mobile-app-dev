@@ -11,16 +11,16 @@ public class Course {
     @PrimaryKey(autoGenerate = true)
     private int courseID;
     private int courseCredits;
-    private String courseTitle, courseStartDate, courseEndDate, courseStatus, courseNote;
+    private String courseName, courseStartDate, courseEndDate, courseStatus, courseNote;
 //  private ArrayList<Instructor> instructors;
 //  TODO: Create array of instructor objects that includes their: name, email, phone number
 //  TODO: Minimum 1 optional note
 
 
     // optional class note
-    public Course(int courseID, String courseTitle, int courseCredits, String courseStartDate, String courseEndDate, String courseStatus, String courseNote) {
+    public Course(int courseID, String courseName, int courseCredits, String courseStartDate, String courseEndDate, String courseStatus, String courseNote) {
         this.courseID = courseID;
-        this.courseTitle = courseTitle;
+        this.courseName = courseName;
         this.courseCredits = courseCredits;
         this.courseStartDate = courseStartDate;
         this.courseEndDate = courseEndDate;
@@ -32,7 +32,7 @@ public class Course {
     public String toString() {
         return "Course{" +
                 "courseID=" + courseID +
-                ", courseTitle=' " + courseTitle +
+                ", courseName=' " + courseName +
                 ", courseCredits=" + courseCredits +
                 ", courseStartDate=' " + courseStartDate +
                 ", courseEndDate=' " + courseEndDate +
@@ -56,12 +56,12 @@ public class Course {
         this.courseCredits = courseCredits;
     }
 
-    public String getCourseTitle() {
-        return courseTitle;
+    public String getCourseName() {
+        return courseName;
     }
 
     public void setCourseTitle(String courseTitle) {
-        this.courseTitle = courseTitle;
+        this.courseName = courseTitle;
     }
 
     public String getCourseStartDate() {
