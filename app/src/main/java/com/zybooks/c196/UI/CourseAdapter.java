@@ -26,6 +26,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         this.context = context;
     }
 
+
+
     class CourseViewHolder extends RecyclerView.ViewHolder {
 
         private TextView courseItemView;
@@ -54,23 +56,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     }
 
 
+
     @NonNull
     @Override
     public CourseAdapter.CourseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = mInflater.inflate(R.layout.item_course_list, parent, false);
         return new CourseAdapter.CourseViewHolder(itemView);
     }
-
-//    @Override
-//    public void onBindViewHolder(@NonNull TermAdapter.TermViewHolder holder, int position) {
-//        if(mTerms != null){
-//            Term current = mTerms.get(position);
-//            String name = current.getTermName();
-//            holder.termItemView.setText(name);
-//        } else {
-//            holder.termItemView.setText("No term name");
-//        }
-//    }
 
 
 
@@ -86,10 +78,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         }
     }
 
+
+
     public void setCourses(List<Course> courses){
         mCourses = courses;
         notifyDataSetChanged();
     }
+
+
 
     @Override
     public int getItemCount() {

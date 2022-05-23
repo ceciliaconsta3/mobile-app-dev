@@ -15,8 +15,10 @@
         <TextView
             android:id="@+id/courseListTextView"
             android:layout_width="match_parent"
-            android:layout_height="59dp"
+            android:layout_height="35dp"
             android:background="@color/purple_200"
+            android:textColor="@color/white"
+            android:gravity="center"
             android:text="courseTextView"
             android:focusable="true"
             app:layout_constraintTop_toTopOf="parent"

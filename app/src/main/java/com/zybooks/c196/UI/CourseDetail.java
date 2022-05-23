@@ -35,6 +35,19 @@ public class CourseDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_detail);
 
+        // have to actually put the items on the CourseListRecyclerView in the CoursesList activity
+        RecyclerView recyclerView = findViewById(R.id.currentTermCoursesRecyclerView);
+        repo = new Repository(getApplication());
+        // need to retrieve course id from last screen
+        List<Course> courses = repo.getAllCourses();
+        final CourseAdapter adapter = new CourseAdapter(this);
+        // need to set the layout manager in this
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // need to set the adapter to the courselistRecyclerView as well for the handoff to complete
+        recyclerView.setAdapter(adapter);
+        adapter.setCourses(courses);
+
+
         editCourseName = findViewById(R.id.editCourseName);
         editCourseCredits = findViewById(R.id.editCourseCredits);
         editCourseStartDate = findViewById(R.id.editCourseStart);
@@ -57,19 +70,6 @@ public class CourseDetail extends AppCompatActivity {
         editCourseEndDate.setText(end);
         editCourseStatus.setText(status);
         editCourseNote.setText(note);
-
-
-        // have to actually put the items on the CourseListRecyclerView in the CoursesList activity
-        RecyclerView recyclerView = findViewById(R.id.currentTermCoursesRecyclerView);
-        repo = new Repository(getApplication());
-        // need to retrieve course id from last screen
-        List<Course> courses = repo.getAllCourses();
-        final CourseAdapter adapter = new CourseAdapter(this);
-        // need to set the layout manager in this
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        // need to set the adapter to the courselistRecyclerView as well for the handoff to complete
-        recyclerView.setAdapter(adapter);
-        adapter.setCourses(courses);
     }
 
 

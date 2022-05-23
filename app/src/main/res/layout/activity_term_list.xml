@@ -13,16 +13,12 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@color/purple_500">
+        app:layout_constraintLeft_toLeftOf="parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/termListRecyclerView"
         android:layout_width="409dp"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="2dp"
-        android:background="@color/teal_200"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
     </ScrollView>
@@ -34,7 +30,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
-        android:clickable="true"
         android:focusable="true"
         android:contentDescription="@string/app_name"
         android:onClick="goToNewTermDetail"

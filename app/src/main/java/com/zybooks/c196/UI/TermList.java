@@ -22,8 +22,6 @@ import java.util.List;
 
 public class TermList extends AppCompatActivity {
 
-    private CourseAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

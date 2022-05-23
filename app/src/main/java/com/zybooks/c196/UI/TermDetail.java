@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class TermDetail extends AppCompatActivity {
-    //    Declare our edit text
     int termID;
     EditText editTermName;
     EditText editTermStart;
@@ -33,7 +32,6 @@ public class TermDetail extends AppCompatActivity {
         setContentView(R.layout.activity_term_detail);
 
         // populate course list above term details
-        // have to actually put the items on the termListRecyclerView in the TermsList activity
         RecyclerView recyclerView2 = findViewById(R.id.currentTermCoursesRecyclerView);
         Repository repo2 = new Repository(getApplication());
         List<Course> courses2 = repo2.getAllCourses();
@@ -63,7 +61,6 @@ public class TermDetail extends AppCompatActivity {
 
 //    TODO: Update function is not working
 //    TODO: replace startDate and endDate textfields with data pickers using COHORT 4
-
     public void saveTermDetailButton(View view) {
         Term term;
         Intent intent = new Intent(TermDetail.this, TermList.class);
