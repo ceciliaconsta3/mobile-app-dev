@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -72,6 +74,30 @@ public class CourseDetail extends AppCompatActivity {
         editCourseNote.setText(note);
     }
 
+    public boolean  onCreateOptionMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_course_detail,menu);
+        return true;
+    }
+
+    public boolean onOptionsItemsSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                return true;
+            case R.id.share:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,"Course Note text");
+                sendIntent.putExtra(Intent.EXTRA_TITLE,"Course Note title");
+                sendIntent.setType("text/plain");
+               Intent shareIntent = Intent.createChooser(sendIntent, null);
+               startActivity(shareIntent);
+               return true;
+            case R.id.notify:
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 //    TODO: Update function is not working
