@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zybooks.c196.Entity.Course;
 import com.zybooks.c196.Entity.Term;
@@ -93,7 +94,24 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
 
 
 //    TODO: input validation that will not allow you to delete a term if it contains >1 courses
-
+//    for(Term term, repository.getAllTerms()){
+//        if(term.getTermID() == termID){
+//            currentTerm = term;
+//        }
+//        numCourses = 0;
+//        for(Course course : repository.getAllCourses()){
+//            if(course.getTermID() == termID){}
+//            ++numCourses;
+//        }
+//        if(numCourses == 0){
+//            repository.deleteTerm(currentTerm);
+//            Toast.makeText(CourseList.this,currentTerm.getTermName() +" was deleted", Toast.LENGTH_LONG).show();
+//        } else {
+//            Toast.makeText(CourseList.this,"Can't delete a term with courses still attached", Toast.LENGTH_LONG).show();
+//        }
+//        return true;
+//    }
+//
     @Override
     public int getItemCount() {
         // in case there aren't any records in the database

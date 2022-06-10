@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.zybooks.c196.Database.Repository;
-import com.zybooks.c196.Entity.Course;
 import com.zybooks.c196.Entity.Term;
 import com.zybooks.c196.R;
 
@@ -50,11 +49,6 @@ public class TermList extends AppCompatActivity {
     }
 
 
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        getMenuInflater().inflate(R.menu.menu_termlist,menu);
-//        return true;
-//    }
-//
 //    public boolean onOptionsItemSelected(MenuItem item){
 //        switch (item.getItemId()){
 //            case android.R.id.home:

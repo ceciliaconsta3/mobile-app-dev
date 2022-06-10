@@ -55,6 +55,17 @@ public class Repository {
             e.printStackTrace();}
     }
 
+    public void deleteTerm(Term term){
+        databaseExecutor.execute(() -> {
+            mTermDAO.delete(term);
+        });
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+    }
+
     public void insertCourse(Course course){
         databaseExecutor.execute(() -> {
             mCourseDAO.insert(course);

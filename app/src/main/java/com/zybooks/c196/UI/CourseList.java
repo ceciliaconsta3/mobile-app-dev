@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.zybooks.c196.Database.Repository;
 import com.zybooks.c196.Entity.Course;
@@ -42,9 +43,28 @@ public class CourseList extends AppCompatActivity {
         recyclerView2.setAdapter(adapter2);
         adapter.setCourses(courses2);
 
+
     }
 
 
+//TODO: Find where this belongs
+//        for(Term term, repository.getAllTerms()){
+//        if(term.getTermID() == termID){
+//            currentTerm = term;
+//        }
+//        numCourses = 0;
+//        for(Course course : repository.getAllCourses()){
+//            if(course.getTermID() == termID){}
+//            ++numCourses;
+//        }
+//        if(numCourses == 0){
+//            repository.deleteTerm(currentTerm);
+//            Toast.makeText(CourseList.this,currentTerm.getTermName() +" was deleted", Toast.LENGTH_LONG).show();
+//        } else {
+//            Toast.makeText(CourseList.this,"Can't delete a term with courses still attached", Toast.LENGTH_LONG).show();
+//        }
+//        return true;
+//    }
 
     public void goToCourseDetail(View view){
         Intent intent = new Intent(CourseList.this, CourseDetail.class);

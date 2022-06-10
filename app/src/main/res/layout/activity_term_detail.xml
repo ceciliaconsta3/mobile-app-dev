@@ -13,6 +13,7 @@
 
 
 
+
 <!-- TODO: layout to display list of courses associated with this term: want to use same format as edit form fields -->
 
     <androidx.recyclerview.widget.RecyclerView
