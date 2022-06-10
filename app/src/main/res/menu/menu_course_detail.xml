@@ -8,9 +8,9 @@
     <item android:title="Notify"
         android:orderInCategory="200"
         android:id="@+id/notify" />
-
 </menu>
-
 
     <!--    Course Detail activity - on the day term starts and ends - send notirfication-->
     <!--    also for assessments, dont forget -->
+
+
