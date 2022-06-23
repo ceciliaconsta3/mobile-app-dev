@@ -126,37 +126,10 @@ public class CourseDetail extends AppCompatActivity {
         };
     }
 
-<<<<<<< HEAD
     public boolean onCreateOptionMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_course_detail,menu);
         return true;
     }
-=======
-    public boolean  onCreateOptionMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_course_detail,menu);
-        return true;
-    }
-
-    public boolean onOptionsItemsSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                this.finish();
-                return true;
-            case R.id.share:
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT,"Course Note text");
-                sendIntent.putExtra(Intent.EXTRA_TITLE,"Course Note title");
-                sendIntent.setType("text/plain");
-               Intent shareIntent = Intent.createChooser(sendIntent, null);
-               startActivity(shareIntent);
-               return true;
-            case R.id.notify:
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
->>>>>>> 6f406a96a115688e786d5f4e064598fb24c7aa84
 
     public boolean onOptionsItemsSelected(MenuItem item){
         switch(item.getItemId()){
